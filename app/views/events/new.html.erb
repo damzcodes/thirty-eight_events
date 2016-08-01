@@ -1,0 +1,25 @@
+<h1> Create a new event </h1>
+
+<%= form_for @event do |f| %>
+  <div>
+    <h2>Name</h2>
+    <%= f.text_field :name %>
+    <%= @event.errors[:name].join(",") %> 
+  </div>
+  <div>
+    <h2>Description</h2>
+    <%= f.text_field :description%>
+    <%= @event.errors[:description].join(",") %>
+  </div>
+   <div>
+    <h2>Date</h2>
+    <%= f.date_field :date%>
+    <%= @event.errors[:date].join(",") %>
+  </div>
+   <div>
+    <h2>Time</h2>
+    <%= f.time_field :time%>
+    <%= @event.errors[:time].join(",") %>
+  </div>
+  <%= f.submit "Create" %>
+<% end %>
